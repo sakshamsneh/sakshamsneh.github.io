@@ -1,15 +1,13 @@
 mainApp.controller("studentController", function($scope) {
     $scope.student = {
-       firstName: "Mahesh",
-       lastName: "Parashar",
+       firstName: "Saksham",
+       lastName: "Sneh",
        fees:500,
        
        subjects:[
-          {name:'Physics',marks:70},
-          {name:'Chemistry',marks:80},
-          {name:'Math',marks:65},
-          {name:'English',marks:75},
-          {name:'Hindi',marks:67}
+          {name:'CS1',marks:100},
+          {name:'CS2',marks:90},
+          {name:'CS3',marks:80}
        ],
        
        fullName: function() {
