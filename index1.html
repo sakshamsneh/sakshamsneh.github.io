@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<script src="/d3.v3.min.js"></script>
+	<script src="/dimple.v2.1.2.min.js"></script>
+    <style>
+		
+    body {
+      margin: 50px; 
+    }
+	#main{
+		width:inherit;
+		height: 150px;
+		background-color:orange;
+		align-content: center;
+	}
+	.cat{
+		background-color: bisque;
+		width: 150px;
+		height: 100px;
+		font-style: italic;
+		border-style: solid;
+		transform-style: preserve-3d;
+		text-align: center;
+		display: table-cell;
+		padding-block-end: 10px;
+		shape-outside: ellipse();
+	}
+    </style>
+ </head>
+ <body>
+	 <p>
+		 <div id = "main">
+	 <div class="cat">
+	 <p><label>X axis</label></p>
+		<select id = "choicex">
+				<option value="sttl" selected="selected">sttl</option>
+				<option value="dttl">dttl</option>
+				<option value="proto">proto</option>
+				<option value="state">state</option>
+				<option value="dur">dur</option>
+				<option value="sbytes">sbytes</option>
+				<option value="dbytes">dbytes</option>
+				<option value="sloss">sloss</option>
+				<option value="dloss">dloss</option>
+				<option value="service">service</option>
+				<option value="Sload">Sload</option>
+				<option value="Dload">Dload</option>
+				<option value="Spkts">Spkts</option>
+				<option value="Dpkts">Dpkts</option>
+				<option value="swin">swin</option>
+				<option value="dwin">dwin></option>
+				<option value="stcpb">stcpb	</option>
+				<option value="dtcpb">dtcpb</option>
+				<option value="smeansz">smeansz</option>
+				<option value="dmeansz">dmeansz</option>
+				<option value="trans_depth">trans_depth</option>
+				<option value="res_bdy_len">res_bdy_len</option>
+				<option value="Sjit">Sjit</option>
+				<option value="Djit">Djit</option>
+				<option value="Stime">Stime</option>
+				<option value = "Ltime">Ltime</option>
+				<option value = "Sintpkt">Sintpkt</option>
+				<option value="Dintpkt">Dintpkt</option>
+				<option value="tcprtt">tcprtt</option>
+				<option value="synack">synack</option>
+				<option value="ackdat">ackdat</option>
+				<option value="is_sm_ips_ports">is_sm_ips_ports</option>
+				<option value="ct_state_ttl">ct_state_ttl</option>
+				<option value="ct_flw_http_mthd">ct_flw_http_mthd</option>
+				<option value="is_ftp_login">is_ftp_login</option>
+				<option value="ct_ftp_cmd">ct_ftp_cmd</option>
+				<option value="ct_srv_src">ct_srv_src</option>
+				<option value="ct_srv_dst">ct_srv_dst</option>
+				<option value="ct_dst_ltm">ct_dst_ltm</option>
+				<option value="ct_src_ ltm">ct_src_ ltm</option>
+				<option value="ct_src_dport_ltm">ct_src_dport_ltm</option>
+				<option value="ct_dst_sport_ltm">ct_dst_sport_ltm</option>
+				<option value="ct_dst_src_ltm">ct_dst_src_ltm</option>
+				<option value="attack_cat">attack_cat</option>
+				<option value="Label">Label</option>
+			</select>
+		</div>
+		<div class="cat">
+				<p><label>Y axis</label></p>
+				   <select id = "choicey">
+						   <option value="sttl" selected="selected">sttl</option>
+						   <option value="dttl">dttl</option>
+						   <option value="proto">proto</option>
+						   <option value="state">state</option>
+						   <option value="dur">dur</option>
+						   <option value="sbytes">sbytes</option>
+						   <option value="dbytes">dbytes</option>
+						   <option value="sloss">sloss</option>
+						   <option value="dloss">dloss</option>
+						   <option value="service">service</option>
+						   <option value="Sload">Sload</option>
+						   <option value="Dload">Dload</option>
+						   <option value="Spkts">Spkts</option>
+						   <option value="Dpkts">Dpkts</option>
+						   <option value="swin">swin</option>
+						   <option value="dwin">dwin></option>
+						   <option value="stcpb">stcpb	</option>
+						   <option value="dtcpb">dtcpb</option>
+						   <option value="smeansz">smeansz</option>
+						   <option value="dmeansz">dmeansz</option>
+						   <option value="trans_depth">trans_depth</option>
+						   <option value="res_bdy_len">res_bdy_len</option>
+						   <option value="Sjit">Sjit</option>
+						   <option value="Djit">Djit</option>
+						   <option value="Stime">Stime</option>
+						   <option value = "Ltime">Ltime</option>
+						   <option value = "Sintpkt">Sintpkt</option>
+						   <option value="Dintpkt">Dintpkt</option>
+						   <option value="tcprtt">tcprtt</option>
+						   <option value="synack">synack</option>
+						   <option value="ackdat">ackdat</option>
+						   <option value="is_sm_ips_ports">is_sm_ips_ports</option>
+						   <option value="ct_state_ttl">ct_state_ttl</option>
+						   <option value="ct_flw_http_mthd">ct_flw_http_mthd</option>
+						   <option value="is_ftp_login">is_ftp_login</option>
+						   <option value="ct_ftp_cmd">ct_ftp_cmd</option>
+						   <option value="ct_srv_src">ct_srv_src</option>
+						   <option value="ct_srv_dst">ct_srv_dst</option>
+						   <option value="ct_dst_ltm">ct_dst_ltm</option>
+						   <option value="ct_src_ ltm">ct_src_ ltm</option>
+						   <option value="ct_src_dport_ltm">ct_src_dport_ltm</option>
+						   <option value="ct_dst_sport_ltm">ct_dst_sport_ltm</option>
+						   <option value="ct_dst_src_ltm">ct_dst_src_ltm</option>
+						   <option value="attack_cat">attack_cat</option>
+						   <option value="Label">Label</option>
+					   </select>
+				   </div>
+				   <div class="cat">
+						<p><label> Catagory</label></p>
+						   <select id = "choicecat">
+								   <option value="sttl" selected="selected">sttl</option>
+								   <option value="dttl">dttl</option>
+								   <option value="proto">proto</option>
+								   <option value="state">state</option>
+								   <option value="dur">dur</option>
+								   <option value="sbytes">sbytes</option>
+								   <option value="dbytes">dbytes</option>
+								   <option value="sloss">sloss</option>
+								   <option value="dloss">dloss</option>
+								   <option value="service">service</option>
+								   <option value="Sload">Sload</option>
+								   <option value="Dload">Dload</option>
+								   <option value="Spkts">Spkts</option>
+								   <option value="Dpkts">Dpkts</option>
+								   <option value="swin">swin</option>
+								   <option value="dwin">dwin></option>
+								   <option value="stcpb">stcpb	</option>
+								   <option value="dtcpb">dtcpb</option>
+								   <option value="smeansz">smeansz</option>
+								   <option value="dmeansz">dmeansz</option>
+								   <option value="trans_depth">trans_depth</option>
+								   <option value="res_bdy_len">res_bdy_len</option>
+								   <option value="Sjit">Sjit</option>
+								   <option value="Djit">Djit</option>
+								   <option value="Stime">Stime</option>
+								   <option value = "Ltime">Ltime</option>
+								   <option value = "Sintpkt">Sintpkt</option>
+								   <option value="Dintpkt">Dintpkt</option>
+								   <option value="tcprtt">tcprtt</option>
+								   <option value="synack">synack</option>
+								   <option value="ackdat">ackdat</option>
+								   <option value="is_sm_ips_ports">is_sm_ips_ports</option>
+								   <option value="ct_state_ttl">ct_state_ttl</option>
+								   <option value="ct_flw_http_mthd">ct_flw_http_mthd</option>
+								   <option value="is_ftp_login">is_ftp_login</option>
+								   <option value="ct_ftp_cmd">ct_ftp_cmd</option>
+								   <option value="ct_srv_src">ct_srv_src</option>
+								   <option value="ct_srv_dst">ct_srv_dst</option>
+								   <option value="ct_dst_ltm">ct_dst_ltm</option>
+								   <option value="ct_src_ ltm">ct_src_ ltm</option>
+								   <option value="ct_src_dport_ltm">ct_src_dport_ltm</option>
+								   <option value="ct_dst_sport_ltm">ct_dst_sport_ltm</option>
+								   <option value="ct_dst_src_ltm">ct_dst_src_ltm</option>
+								   <option value="attack_cat">attack_cat</option>
+								   <option value="Label">Label</option>
+							   </select>
+						   </div>
+	   <button id = "button" type = "button" value= "Generate" onclick="reload()">Submit</button>
+			</div>	   
+	</p>
+	<div id='chartContainer1'>
+		<h2>Lets Visualise Data :)</h2>
+
+		<script type="text/javascript">
+		var reload=function(){
+			var svg1 = dimple.newSvg('#chartContainer1', 1500,400);
+			var choicex =document.getElementById("choicex").value;
+			var choicey =document.getElementById("choicey").value;
+			var choicecat =document.getElementById("choicecat").value;
+			d3.csv('/test.csv', function(data) {
+				var ChartInstance = new dimple.chart(svg1,data);
+				ChartInstance.setBounds(60,30,510,305);
+				var x = ChartInstance.addCategoryAxis('x', ""+choicex+"");
+				// x.addOrderRule('Type');
+				console.log(""+choicex+"");
+				console.log(""+choicey+"");
+				console.log(""+choicecat+"");
+				var y = ChartInstance.addPctAxis("y",""+choicey+"");
+			
+				//y.showbycent = true;
+				//var y = ChartInstance.addMeasureAxis('y', 'Count');
+				var s = ChartInstance.addSeries(""+choicecat+"", dimple.plot.bar);
+				ChartInstance.addLegend(60, 10, 510, 20, "right");
+				ChartInstance.draw(1000);	
+			 });
+		}
+		</script>
+		</div>
+</body>
+ </html>
