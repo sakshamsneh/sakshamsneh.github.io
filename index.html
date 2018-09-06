@@ -194,7 +194,7 @@
 			var svg1 = dimple.newSvg('#chartContainer1', 1500,400);
 			var choicex =document.getElementById("choicex").value;
 			var a=false;
-			if(choicex=="Stime"){	a=true;	}
+			if(document.getElementById("choicex").value=="Stime"){	a=true;	}
 			var choicey =document.getElementById("choicey").value;
 			var choicecat =document.getElementById("choicecat").value;
 			d3.csv('/public/test.csv', function(data) {
