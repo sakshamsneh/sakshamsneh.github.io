@@ -198,6 +198,7 @@
 			var choicey =document.getElementById("choicey").value;
 			var choicecat =document.getElementById("choicecat").value;
 			d3.csv('/public/test.csv', function(data) {
+				var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S").parse;
 				var ChartInstance = new dimple.chart(svg1,data);
 				ChartInstance.setBounds(60,30,510,305);
 				if (a==true){
