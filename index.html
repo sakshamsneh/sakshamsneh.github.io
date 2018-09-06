@@ -193,11 +193,16 @@
 		var reload=function(){
 			var svg1 = dimple.newSvg('#chartContainer1', 1500,400);
 			var choicex =document.getElementById("choicex").value;
+			var a=false;
+			if(choicex=="Stime"){	a=true;	}
 			var choicey =document.getElementById("choicey").value;
 			var choicecat =document.getElementById("choicecat").value;
 			d3.csv('/public/test.csv', function(data) {
 				var ChartInstance = new dimple.chart(svg1,data);
 				ChartInstance.setBounds(60,30,510,305);
+				if (a==true){
+					choicex=parseDate(choicex);
+				}
 				var x = ChartInstance.addCategoryAxis('x', ""+choicex+"");
 				// x.addOrderRule('Type');
 				console.log(""+choicex+"");
