@@ -15,7 +15,7 @@
             var pack = d3.pack()
                 .size([width, height])
                 .padding(1.5);
-            d3.csv("/test.csv",function(data)
+            d3.csv("/public/test.csv",function(data)
 			{
                 var dataByAttack = d3.nest().key(function(data) { return data.attack_cat; }).rollup(function(v) { return v.length; }).entries(data);
                 dataByAttack[0].key="No attack";
