@@ -1,0 +1,54 @@
+[
+    {
+        "key": "Backdoors",
+        "value": 534
+    },
+    {
+        "key": " Fuzzers",
+        "value": 5051
+    },
+    {
+        "key": "Analysis",
+        "value": 2677
+    },
+    {
+        "key": " Reconnaissance ",
+        "value": 12228
+    },
+    {
+        "key": "Backdoor",
+        "value": 1795
+    },
+    {
+        "key": " Fuzzers ",
+        "value": 19195
+    },
+    {
+        "key": "Reconnaissance",
+        "value": 1759
+    },
+    {
+        "key": "Generic",
+        "value": 215481
+    },
+    {
+        "key": "DoS",
+        "value": 16353
+    },
+    {
+        "key": " Shellcode ",
+        "value": 1288
+    },
+    {
+        "key": "Shellcode",
+        "value": 223
+    },
+    {
+        "key": "Worms",
+        "value": 174
+    },
+    {
+        "key": "Exploits",
+        "value": 44525
+    }
+]
