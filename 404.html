@@ -1,71 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Ibm1</title>
-  <base href="sakshamsneh">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="assets/bppimt.png">  <!--"favicon.ico"-->
-<link rel="stylesheet" href="styles.d87a17bdecdf7f214462.css"></head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap 3 Responsive Layout Example</title>
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+</head>
 <body>
-  <div class="header">
-    <img src="assets/bppimt.png" height="90" width="90" style='vertical-align:middle;'>
-    <div style='vertical-align:middle; display:inline;font-size: 35px;font-weight: bold;'>
-      NETWORK INTRUSION DETECTION
+<div class="hidden-print">
+    <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Fileindie</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href=" /index.html" >Home</a></li>
+                    <li><a href="/form1.html" >Form</a></li>
+                    <li><a href="/index.html" >About</a></li>
+                    <li><a href="/index.html" >Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <div class="header">
+                <h1>Fileindie<small> website</small></h1>
+            </div>
+            <p>Connect to <a href="https://fileindie.geocities.ws" >Fileindie</a> and get latest projects and apps created by us. You can create your own projects and share them here with the people around the world.</p>
+            <p><a href="https://fileindie.geocities.ws"  class="btn btn-success btn-lg">Get started today</a></p>
+        </div>
     </div>
-    <div class="header-right">
-      <a class="active" onclick="window.location.reload()">Home</a>
-      <a class="active" href="https://attackdetection.eu-gb.mybluemix.net">Attack</a>
+    <div class="container">
+        <blockquote class="pull-right">
+            <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do   anything about it.</p>
+            <small>by <cite>Albert Einstein</cite></small>
+        </blockquote>
     </div>
-  </div>
-  <div class="bod">
-    <app-root></app-root>
-  </div>
-  <div class="footer">
-    @PROJECT
-    <element id="txt"/>
-  </div>
-  <script>
-    function myFunction() {
-      var input, filter, label, a, i;
-      input = document.getElementById("mySearch");
-      filter = input.value.toUpperCase();
-      label = document.getElementsByTagName("label");
-      for (i = 0; i < label.length; i++) {
-        a = label[i];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) label[i].style.display = "";
-        else  label[i].style.display = "none";
-      }
-    }
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
-      startTime();
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        document.getElementsByClassName("header")[0].style.padding = "30px 10px";
-        document.getElementsByClassName("logo")[0].style.fontSize = "25px";
-      } else {
-        document.getElementsByClassName("header")[0].style.padding = "80px 10px";
-        document.getElementsByClassName("logo")[0].style.fontSize = "35px";
-      }
-    }
-    function startTime() {
-      var today=new Date();
-      var day = today.getDate();
-      var month = today.getMonth();
-      var year = today.getFullYear();
-      var h=today.getHours();
-      var m=today.getMinutes();
-      var s=today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      document.getElementById('txt').innerHTML = "DATE: " + day + "/" + month + "/" + year + " " + "TIME: " + h+":"+m+":"+s;
-      var t = setTimeout(function(){startTime()},500);
-    }
-    function checkTime(i){
-      if (i<10)
-        i = "0" + i;  // add zero in front of numbers < 10
-      return i;
-    }
-  </script>
-<script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.ddd9a892a14fee6c1d25.js"></script><script type="text/javascript" src="main.24fd5649123fa3d1c061.js"></script></body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xs-12">
+                <h2>Website building</h2>
+                <p>It requires the basic HTML, CSS, Bootstrap, and various other languages to create your own web pages. The website projects are gievn here, along with necessary tutorial links and supporting documents.</p>
+                <p><a href="/website_build1.html" class="btn btn-success">Learn More &raquo;</a></p>
+			</div>
+			<div class="clearfix visible-xs-block"></div>
+            <div class="col-sm-6 col-md-4 col-lg-4 col-xs-12">
+                <h2>IOT</h2>
+                <p>Get the basic projects for simple raspberry pi and arduino. Create your own and share them.</p>
+                <p><a href="https://www.tutorialrepublic.com/html-tutorial/"  class="btn btn-success">Learn More &raquo;</a></p>
+			</div>
+			<div class="clearfix visible-sm-block"></div>
+			<div class="clearfix visible-xs-block"></div>
+			<div class="col-sm-6 col-md-4 col-lg-4 col-xs-12">
+                <h2>Android App</h2>
+                <p>Basic kotlin or java will do. Get the templates for best project and create the next "best app".</p>
+                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/"  class="btn btn-success">Learn More &raquo;</a></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12">
+                <footer>
+                    <p>Error codes on links:<a href="/error1.html">Error</a></p>
+                    <p>&copy; Copyright 2014 Fileindie</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<h1><p class="visible-print"><strong>Don't print!</strong></p></h1>
+</body>
 </html>
